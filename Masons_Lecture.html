@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pokedex</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $.get("https://pokeapi.co/api/v2/pokemon/"+ count, function(data0){
+                    $.get(data0.forms[0].url, function(data1){
+                    console.log(data1.sprites.front_default);
+                    }, 'json');
+                }, 'json');
+
+                var apicall1 =data1.sprites.front_default;
+                var count = 1;
+                for(var i = 1; 1<152; i++){
+                    pokego();
+                    count++;
+                }
+                function pokego(){
+                    $("#a").append(`<img src="${apicall}.png">`)
+                }
+    });
+
+        </script>
+    </head>
+    <body>
+        <div id="a">
+
+            <div id="">
+
+            </div><!--end pokemon-->
+
+        </div><!--end container-->
+    </body>
+</html>
